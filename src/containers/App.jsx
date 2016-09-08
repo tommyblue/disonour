@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import MatchForm from '../components/MatchForm.jsx';
 import RankList from '../components/RankList.jsx';
+import { incrementSavesAction } from '../actions';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      saves: 0,
       teams: [
         {
           keeper: '',
@@ -49,6 +52,7 @@ class App extends React.Component {
           teams={teams}
           onChange={this.onMatchFormChange.bind(this)}
           onSubmit={this.onMatchFormSubmitted.bind(this)}
+          onSave={this.props.incrementSaves}
         />
         <RankList items={topDisonoured} limit={10} />
       </div>
@@ -56,4 +60,19 @@ class App extends React.Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  incrementSaves: PropTypes.func.isRequired,
+};
+
+function mapStateToProps(state) {
+  console.log(state);
+  return state;
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    incrementSaves: () => dispatch(incrementSavesAction()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
