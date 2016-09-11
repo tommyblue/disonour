@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+}
+.match-form {
+  display: block;
+}
+
+.team-form {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}

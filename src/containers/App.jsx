@@ -47,7 +47,7 @@ class App extends React.Component {
     const { teams, topDisonoured } = this.state;
 
     return (
-      <div>
+      <div className="main-app">
         <MatchForm
           teams={teams}
           onChange={this.onMatchFormChange.bind(this)}
@@ -65,7 +65,7 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
-  console.log(state);
+  // console.log(state);
   return state;
 }
 

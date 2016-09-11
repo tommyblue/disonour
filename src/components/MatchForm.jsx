@@ -7,9 +7,9 @@ function MatchForm(props) {
   const { teams, onChange, onSave } = props;
 
   return (
-    <div>
+    <div className="pure-form">
       { teams.map((team, id) => <TeamForm key={id} id={id} team={team} onChange={onChange} />) }
-      <button onClick={onSave}>Save!</button>
+      <button onClick={onSave} className="pure-button pure-button-primary">Save!</button>
     </div>
   );
 }

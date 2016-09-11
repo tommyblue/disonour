@@ -13,7 +13,7 @@ class TeamForm extends React.Component {
     const { team } = this.props;
 
     return (
-      <div>
+      <div className="team-form">
         <p>
           <input
             type="text"

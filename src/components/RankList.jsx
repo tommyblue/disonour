@@ -8,7 +8,7 @@ function RankList(props) {
   const limitedItems = items.slice(0, limit);
 
   return (
-    <table>
+    <table className="pure-table">
       <thead>
         <tr>
           <th>Name</th>
